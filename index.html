@@ -1,0 +1,1028 @@
+```html
+<!DOCTYPE html>
+<html lang="id" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kosakata Profesi - Bahasa Arab Kelas 5</title>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+            padding: 2rem 1rem;
+            color: #2d3748;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #ffffff;
+            padding: 1rem 2rem;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .nav-title {
+            font-weight: 700;
+            color: #4a5568;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .nav-buttons {
+            display: flex;
+            gap: 0.75rem;
+        }
+
+        .nav-btn {
+            border: none;
+            background: #edf2f7;
+            color: #4a5568;
+            padding: 0.6rem 1.2rem;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .nav-btn:hover {
+            background: #e2e8f0;
+            color: #2d3748;
+        }
+
+        .nav-btn.active {
+            background: #667eea;
+            color: white;
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+        }
+
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2.5rem 2rem;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.5px;
+        }
+
+        .header .subtitle {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            font-weight: 300;
+        }
+
+        .page {
+            display: none;
+            animation: fadeIn 0.3s ease-in-out;
+        }
+
+        .page.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(6px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .content {
+            padding: 2.5rem 2rem;
+        }
+
+        .section-title {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: #1a202c;
+            border-left: 4px solid #667eea;
+            padding-left: 1rem;
+        }
+
+        .rule-box {
+            background: #f7fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .rule-box strong {
+            color: #667eea;
+        }
+
+        .arabic {
+            font-family: 'Amiri', serif;
+            font-size: 1.3rem;
+            direction: rtl;
+            display: inline-block;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 2rem;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+
+        thead {
+            background: #667eea;
+            color: white;
+        }
+
+        th {
+            padding: 1rem;
+            text-align: left;
+            font-weight: 500;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        th:nth-child(3), th:nth-child(4) {
+            text-align: right;
+        }
+
+        td {
+            padding: 1.2rem 1rem;
+            border-bottom: 1px solid #e2e8f0;
+            font-size: 0.95rem;
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        tr:hover {
+            background: #f7fafc;
+        }
+
+        td:nth-child(3), td:nth-child(4) {
+            text-align: right;
+            font-family: 'Amiri', serif;
+            font-size: 1.4rem;
+            direction: rtl;
+        }
+
+        .gender-label {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-top: 0.25rem;
+        }
+
+        .male {
+            background: #ebf4ff;
+            color: #3182ce;
+        }
+
+        .female {
+            background: #fef5f7;
+            color: #d53f8c;
+        }
+
+        .example-box {
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.08) 0%, rgba(118, 75, 162, 0.08) 100%);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .example-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid rgba(102, 126, 234, 0.2);
+        }
+
+        .example-item:last-child {
+            border-bottom: none;
+        }
+
+        .example-arabic {
+            font-family: 'Amiri', serif;
+            font-size: 1.3rem;
+            direction: rtl;
+            color: #2d3748;
+        }
+
+        .example-translation {
+            font-size: 0.9rem;
+            color: #718096;
+            font-style: italic;
+        }
+
+        .tip {
+            background: #fffaf0;
+            border-left: 4px solid #ed8936;
+            padding: 1rem 1.5rem;
+            margin-top: 2rem;
+            border-radius: 0 8px 8px 0;
+            font-size: 0.9rem;
+            color: #744210;
+        }
+
+        .cta-banner {
+            margin-top: 2.5rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 2rem;
+            border-radius: 12px;
+            color: white;
+            text-align: center;
+            box-shadow: 0 10px 20px rgba(102, 126, 234, 0.2);
+        }
+
+        .cta-banner h3 {
+            font-size: 1.4rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .cta-banner p {
+            font-size: 0.95rem;
+            margin-bottom: 1.25rem;
+            opacity: 0.9;
+        }
+
+        .btn-primary {
+            background: #ffffff;
+            color: #667eea;
+            border: none;
+            padding: 0.8rem 2rem;
+            font-size: 1rem;
+            font-weight: 700;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+            background: #f8fafc;
+        }
+
+        .quiz-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 2rem;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .quiz-progress-text {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #718096;
+        }
+
+        .progress-bar-container {
+            width: 100%;
+            height: 8px;
+            background: #edf2f7;
+            border-radius: 4px;
+            overflow: hidden;
+            margin-bottom: 2rem;
+        }
+
+        .progress-bar {
+            height: 100%;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            width: 0%;
+            transition: width 0.3s ease;
+        }
+
+        .question-card {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            transition: all 0.2s ease;
+        }
+
+        .question-card.answered {
+            border-color: #cbd5e0;
+        }
+
+        .question-number {
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: #667eea;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 0.5rem;
+        }
+
+        .question-text {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #2d3748;
+            margin-bottom: 1rem;
+            line-height: 1.5;
+        }
+
+        .question-arabic-text {
+            font-family: 'Amiri', serif;
+            font-size: 1.6rem;
+            direction: rtl;
+            color: #2b6cb0;
+            margin: 0.5rem 0 1rem 0;
+            line-height: 1.8;
+        }
+
+        .options-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 0.75rem;
+        }
+
+        @media (min-width: 640px) {
+            .options-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .option-btn {
+            background: white;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 0.9rem 1rem;
+            text-align: left;
+            cursor: pointer;
+            font-size: 0.95rem;
+            color: #4a5568;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .option-btn:hover {
+            border-color: #a0aec0;
+            background: #f7fafc;
+        }
+
+        .option-btn.selected {
+            border-color: #667eea;
+            background: #ebf8ff;
+            color: #2b6cb0;
+            font-weight: 600;
+        }
+
+        .option-btn .opt-arabic {
+            font-family: 'Amiri', serif;
+            font-size: 1.25rem;
+            direction: rtl;
+            margin-left: 0.5rem;
+        }
+
+        .result-container {
+            display: none;
+            text-align: center;
+            padding: 2rem 1rem;
+        }
+
+        .result-score-circle {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto 1.5rem auto;
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
+        }
+
+        .result-score-num {
+            font-size: 2.5rem;
+            font-weight: 700;
+            line-height: 1;
+        }
+
+        .result-score-label {
+            font-size: 0.8rem;
+            opacity: 0.8;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 0.25rem;
+        }
+
+        .result-title {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: #2d3748;
+            margin-bottom: 0.5rem;
+        }
+
+        .result-desc {
+            color: #718096;
+            margin-bottom: 2rem;
+            font-size: 1rem;
+        }
+
+        .feedback-list {
+            text-align: left;
+            margin-bottom: 2rem;
+        }
+
+        .feedback-item {
+            background: #f8fafc;
+            border-radius: 8px;
+            padding: 1rem 1.25rem;
+            margin-bottom: 0.75rem;
+            border-left: 4px solid #cbd5e0;
+        }
+
+        .feedback-item.correct {
+            border-left-color: #48bb78;
+            background: #f0fff4;
+        }
+
+        .feedback-item.incorrect {
+            border-left-color: #f56565;
+            background: #fff5f5;
+        }
+
+        .feedback-q {
+            font-weight: 600;
+            font-size: 0.95rem;
+            margin-bottom: 0.25rem;
+            color: #2d3748;
+        }
+
+        .feedback-ans {
+            font-size: 0.875rem;
+            color: #4a5568;
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-secondary {
+            background: #e2e8f0;
+            color: #4a5568;
+            border: none;
+            padding: 0.8rem 1.8rem;
+            font-size: 0.95rem;
+            font-weight: 600;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .btn-secondary:hover {
+            background: #cbd5e0;
+            color: #2d3748;
+        }
+
+        .submit-btn-container {
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        .btn-submit {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 0.9rem 2.5rem;
+            font-size: 1rem;
+            font-weight: 700;
+            border-radius: 30px;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+            transition: all 0.2s ease;
+        }
+
+        .btn-submit:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.5);
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            body {
+                padding: 0.5rem;
+            }
+
+            .header h1 {
+                font-size: 1.75rem;
+            }
+
+            .content {
+                padding: 1.5rem 1rem;
+            }
+
+            table {
+                font-size: 0.85rem;
+            }
+
+            td:nth-child(3), td:nth-child(4) {
+                font-size: 1.1rem;
+            }
+
+            .navbar {
+                padding: 0.75rem 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="navbar">
+            <div class="nav-title">
+                <span>📚</span> Kelas 5 SD - Bahasa Arab
+            </div>
+            <div class="nav-buttons">
+                <button class="nav-btn active" id="btn-tab-materi" onclick="switchTab('materi')">Materi</button>
+                <button class="nav-btn" id="btn-tab-latihan" onclick="switchTab('latihan')">Latihan Soal</button>
+            </div>
+        </div>
+
+        <div class="header">
+            <h1>Kosakata Profesi</h1>
+            <div class="subtitle">مِهْنَة — Bahasa Arab Kelas 5 SD</div>
+        </div>
+
+        <!-- ==================== PAGE 1: MATERI ==================== -->
+        <div id="page-materi" class="page active">
+            <div class="content">
+                <h2 class="section-title">Pola Dasar</h2>
+                <div class="rule-box">
+                    <strong>Rumus:</strong> Kata Laki-laki + <span class="arabic">ة</span> (dibaca: <em>tun</em>) = Kata Perempuan<br><br>
+                    Contoh: <span class="arabic">مُهَنْدِس</span> (Muhandisun) → <span class="arabic">مُهَنْدِسَة</span> (Muhandisatun)
+                </div>
+
+                <h2 class="section-title">Daftar Kosakata</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>No</th>
+                            <th>Arti</th>
+                            <th>Laki-laki</th>
+                            <th>Perempuan</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Insinyur</td>
+                            <td>
+                                <span class="arabic">مُهَنْدِس</span><br>
+                                <span class="gender-label male">Muhandisun</span>
+                            </td>
+                            <td>
+                                <span class="arabic">مُهَنْدِسَة</span><br>
+                                <span class="gender-label female">Muhandisatun</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Perawat</td>
+                            <td>
+                                <span class="arabic">مُمَرِّض</span><br>
+                                <span class="gender-label male">Mumarridhun</span>
+                            </td>
+                            <td>
+                                <span class="arabic">مُمَرِّضَة</span><br>
+                                <span class="gender-label female">Mumarridhotun</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>Penjahit</td>
+                            <td>
+                                <span class="arabic">خَيَّاط</span><br>
+                                <span class="gender-label male">Khayyatun</span>
+                            </td>
+                            <td>
+                                <span class="arabic">خَيَّاطَة</span><br>
+                                <span class="gender-label female">Khayyatotun</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>Nelayan</td>
+                            <td>
+                                <span class="arabic">صَيَّاد</span><br>
+                                <span class="gender-label male">Shoyyadun</span>
+                            </td>
+                            <td>
+                                <span class="arabic">صَيَّادَة</span><br>
+                                <span class="gender-label female">Shoyyadatun</span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h2 class="section-title">Contoh Kalimat</h2>
+                <div class="example-box">
+                    <div class="example-item">
+                        <div class="example-arabic">هُوَ مُهَنْدِسٌ</div>
+                        <div class="example-translation">Dia (laki-laki) adalah seorang insinyur</div>
+                    </div>
+                    <div class="example-item">
+                        <div class="example-arabic">هِيَ مُهَنْدِسَةٌ</div>
+                        <div class="example-translation">Dia (perempuan) adalah seorang insinyur</div>
+                    </div>
+                    <div class="example-item">
+                        <div class="example-arabic">هُوَ مُمَرِّضٌ</div>
+                        <div class="example-translation">Dia (laki-laki) adalah seorang perawat</div>
+                    </div>
+                    <div class="example-item">
+                        <div class="example-arabic">هِيَ مُمَرِّضَةٌ</div>
+                        <div class="example-translation">Dia (perempuan) adalah seorang perawat</div>
+                    </div>
+                </div>
+
+                <div class="tip">
+                    <strong>Tips:</strong> Hafalkan bentuk laki-lakinya terlebih dahulu. Untuk bentuk perempuan, cukup tambahkan "tun" di akhir kata.
+                </div>
+
+                <!-- Call to action button to launch quiz -->
+                <div class="cta-banner">
+                    <h3>Sudah Paham Materinya?</h3>
+                    <p>Uji pemahamanmu sekarang dengan menjawab 10 soal latihan interaktif!</p>
+                    <button class="btn-primary" onclick="switchTab('latihan')">Mulai Latihan Soal 🚀</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- ==================== PAGE 2: LATIHAN SOAL ==================== -->
+        <div id="page-latihan" class="page">
+            <div class="content">
+                <div class="quiz-header">
+                    <h2 class="section-title" style="margin-bottom:0;">Latihan Soal</h2>
+                    <span class="quiz-progress-text" id="progress-text">Dijawab: 0 / 10 Soal</span>
+                </div>
+
+                <div class="progress-bar-container">
+                    <div class="progress-bar" id="progress-bar"></div>
+                </div>
+
+                <!-- Form Quiz -->
+                <div id="quiz-questions-container">
+                    <!-- Questions will be injected dynamically via JS -->
+                </div>
+
+                <div class="submit-btn-container" id="submit-container">
+                    <button class="btn-submit" onclick="calculateResult()">Periksa Jawaban Saya 📝</button>
+                </div>
+
+                <!-- Result View (Initially Hidden) -->
+                <div class="result-container" id="result-container">
+                    <div class="result-score-circle">
+                        <span class="result-score-num" id="final-score">0</span>
+                        <span class="result-score-label">NILAI KAMU</span>
+                    </div>
+                    <h3 class="result-title" id="result-title">Hebat!</h3>
+                    <p class="result-desc" id="result-desc">Kamu telah menyelesaikan seluruh soal latihan.</p>
+
+                    <div class="feedback-list" id="feedback-list">
+                        <!-- Pembahasan per soal akan ditampilkan di sini -->
+                    </div>
+
+                    <div class="btn-group">
+                        <button class="btn-secondary" onclick="resetQuiz()">Ulangi Latihan 🔄</button>
+                        <button class="btn-primary" onclick="switchTab('materi')" style="background:#667eea; color:white;">Kembali ke Materi 📖</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Data 10 Soal Pilihan Ganda berdasarkan Materi
+        const questionsData = [
+            {
+                id: 1,
+                question: "Apa bahasa Arab dari profesi 'Insinyur' untuk laki-laki?",
+                arabic: ".....",
+                options: [
+                    { text: "Muhandisun", arabic: "مُهَنْدِسٌ" },
+                    { text: "Mumarridhun", arabic: "مُمَرِّضٌ" },
+                    { text: "Khayyatun", arabic: "خَيَّاطٌ" },
+                    { text: "Shoyyadun", arabic: "صَيَّادٌ" }
+                ],
+                correct: 0,
+                explanation: "Insinyur (Laki-laki) dalam bahasa Arab adalah مُهَنْدِسٌ (Muhandisun)."
+            },
+            {
+                id: 2,
+                question: "Huruf apa yang ditambahkan di akhir kata profesi laki-laki untuk mengubahnya menjadi bentuk perempuan?",
+                arabic: "ة",
+                options: [
+                    { text: "Alif ( ا )", arabic: "ا" },
+                    { text: "Ta' Marbutah ( ة )", arabic: "ة" },
+                    { text: "Ya' ( ي )", arabic: "ي" },
+                    { text: "Mim ( م )", arabic: "م" }
+                ],
+                correct: 1,
+                explanation: "Bentuk perempuan dibuat dengan menambahkan huruf Ta' Marbutah ( ة ) yang berharakat tanwin (tun) di akhir kata."
+            },
+            {
+                id: 3,
+                question: "Terjemahan bahasa Arab yang tepat untuk kalimat 'Dia (perempuan) adalah seorang perawat' adalah...",
+                arabic: ".....",
+                options: [
+                    { text: "Huwa Mumarridhun", arabic: "هُوَ مُمَرِّضٌ" },
+                    { text: "Hiya Mumarridhotun", arabic: "هِيَ مُمَرِّضَةٌ" },
+                    { text: "Huwa Muhandisun", arabic: "هُوَ مُهَنْدِسٌ" },
+                    { text: "Hiya Khayyatotun", arabic: "هِيَ خَيَّاطَةٌ" }
+                ],
+                correct: 1,
+                explanation: "Untuk perempuan, gunakan kata ganti 'هِيَ' (Hiya) dan tambahkan 'tun' pada profesinya menjadi 'مُمَرِّضَةٌ' (Mumarridhotun)."
+            },
+            {
+                id: 4,
+                question: "Apa arti dari kata bahasa Arab berikut ini?",
+                arabic: "صَيَّادَةٌ",
+                options: [
+                    { text: "Penjahit (Perempuan)", arabic: "" },
+                    { text: "Nelayan (Perempuan)", arabic: "" },
+                    { text: "Perawat (Perempuan)", arabic: "" },
+                    { text: "Insinyur (Perempuan)", arabic: "" }
+                ],
+                correct: 1,
+                explanation: "صَيَّادَةٌ (Shoyyadatun) artinya adalah Nelayan Perempuan."
+            },
+            {
+                id: 5,
+                question: "Kata 'خَيَّاطٌ' (Khayyatun) dalam bahasa Indonesia berarti...",
+                arabic: "خَيَّاطٌ",
+                options: [
+                    { text: "Penjahit (Laki-laki)", arabic: "" },
+                    { text: "Nelayan (Laki-laki)", arabic: "" },
+                    { text: "Insinyur (Laki-laki)", arabic: "" },
+                    { text: "Perawat (Laki-laki)", arabic: "" }
+                ],
+                correct: 0,
+                explanation: "خَيَّاطٌ (Khayyatun) adalah kata bahasa Arab untuk Penjahit Laki-laki."
+            },
+            {
+                id: 6,
+                question: "Kata ganti (Dhamir) 'هُوَ' (Huwa) digunakan untuk menyatakan...",
+                arabic: "هُوَ",
+                options: [
+                    { text: "Dia (Perempuan)", arabic: "" },
+                    { text: "Dia (Laki-laki)", arabic: "" },
+                    { text: "Kamu (Laki-laki)", arabic: "" },
+                    { text: "Saya", arabic: "" }
+                ],
+                correct: 1,
+                explanation: " Kata 'هُوَ' (Huwa) berarti 'Dia' untuk kata ganti Laki-laki tunggal."
+            },
+            {
+                id: 7,
+                question: "Bentuk perempuan dari kata 'خَيَّاطٌ' (Khayyatun) adalah...",
+                arabic: "خَيَّاطٌ ➔ ....",
+                options: [
+                    { text: "Khayyatotun", arabic: "خَيَّاطَةٌ" },
+                    { text: "Mumarridhotun", arabic: "مُمَرِّضَةٌ" },
+                    { text: "Muhandisatun", arabic: "مُهَنْدِسَةٌ" },
+                    { text: "Shoyyadatun", arabic: "صَيَّادَةٌ" }
+                ],
+                correct: 0,
+                explanation: "Bentuk perempuan dari Khayyatun (خَيَّاطٌ) adalah Khayyatotun (خَيَّاطَةٌ)."
+            },
+            {
+                id: 8,
+                question: "Apa arti dari kalimat berikut?",
+                arabic: "هُوَ صَيَّادٌ",
+                options: [
+                    { text: "Dia (perempuan) adalah seorang nelayan", arabic: "" },
+                    { text: "Dia (laki-laki) adalah seorang nelayan", arabic: "" },
+                    { text: "Saya adalah seorang nelayan", arabic: "" },
+                    { text: "Kamu adalah seorang penjahit", arabic: "" }
+                ],
+                correct: 1,
+                explanation: "هُوَ (Dia Laki-laki) + صَيَّادٌ (Nelayan Laki-laki) = Dia (laki-laki) adalah seorang nelayan."
+            },
+            {
+                id: 9,
+                question: "Kata 'مُمَرِّضَةٌ' (Mumarridhotun) menunjukkan profesi...",
+                arabic: "مُمَرِّضَةٌ",
+                options: [
+                    { text: "Insinyur Perempuan", arabic: "" },
+                    { text: "Perawat Perempuan", arabic: "" },
+                    { text: "Penjahit Perempuan", arabic: "" },
+                    { text: "Nelayan Perempuan", arabic: "" }
+                ],
+                correct: 1,
+                explanation: "مُمَرِّضَةٌ (Mumarridhotun) adalah sebutan untuk Perawat Perempuan."
+            },
+            {
+                id: 10,
+                question: "Manakah pasangan kata ganti dan profesi yang SALAH di bawah ini?",
+                arabic: "❓",
+                options: [
+                    { text: "Huwa Muhandisun", arabic: "هُوَ مُهَنْدِسٌ" },
+                    { text: "Hiya Mumarridhotun", arabic: "هِيَ مُمَرِّضَةٌ" },
+                    { text: "Huwa Khayyatotun", arabic: "هُوَ خَيَّاطَةٌ" },
+                    { text: "Hiya Shoyyadatun", arabic: "هِيَ صَيَّادَةٌ" }
+                ],
+                correct: 2,
+                explanation: "Pasangan 'هُوَ خَيَّاطَةٌ' SALAH karena 'هُوَ' untuk laki-laki, sedangkan 'خَيَّاطَةٌ' adalah bentuk perempuan. Harusnya 'هُوَ خَيَّاطٌ' atau 'هِيَ خَيَّاطَةٌ'."
+            }
+        ];
+
+        // User answers state
+        let userAnswers = {};
+
+        function switchTab(tab) {
+            const pageMateri = document.getElementById('page-materi');
+            const pageLatihan = document.getElementById('page-latihan');
+            const btnMateri = document.getElementById('btn-tab-materi');
+            const btnLatihan = document.getElementById('btn-tab-latihan');
+
+            if (tab === 'materi') {
+                pageMateri.classList.add('active');
+                pageLatihan.classList.remove('active');
+                btnMateri.classList.add('active');
+                btnLatihan.classList.remove('active');
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            } else if (tab === 'latihan') {
+                pageLatihan.classList.add('active');
+                pageMateri.classList.remove('active');
+                btnLatihan.classList.add('active');
+                btnMateri.classList.remove('active');
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+        }
+
+        // Render questions to page
+        function renderQuestions() {
+            const container = document.getElementById('quiz-questions-container');
+            container.innerHTML = '';
+
+            questionsData.forEach((q, index) => {
+                const questionCard = document.createElement('div');
+                questionCard.className = 'question-card';
+                questionCard.id = `q-card-${index}`;
+
+                let optionsHTML = '';
+                q.options.forEach((opt, optIndex) => {
+                    const isSelected = userAnswers[index] === optIndex ? 'selected' : '';
+                    optionsHTML += `
+                        <button class="option-btn ${isSelected}" onclick="selectAnswer(${index}, ${optIndex})">
+                            <span><strong>${String.fromCharCode(65 + optIndex)}.</strong> ${opt.text}</span>
+                            ${opt.arabic ? `<span class="opt-arabic">${opt.arabic}</span>` : ''}
+                        </button>
+                    `;
+                });
+
+                questionCard.innerHTML = `
+                    <div class="question-number">Soal ${index + 1} dari 10</div>
+                    <div class="question-text">${q.question}</div>
+                    ${q.arabic ? `<div class="question-arabic-text">${q.arabic}</div>` : ''}
+                    <div class="options-grid">
+                        ${optionsHTML}
+                    </div>
+                `;
+
+                container.appendChild(questionCard);
+            });
+
+            updateProgress();
+        }
+
+        function selectAnswer(questionIndex, optionIndex) {
+            userAnswers[questionIndex] = optionIndex;
+            renderQuestions();
+        }
+
+        function updateProgress() {
+            const answeredCount = Object.keys(userAnswers).length;
+            const percentage = (answeredCount / questionsData.length) * 100;
+
+            document.getElementById('progress-bar').style.width = `${percentage}%`;
+            document.getElementById('progress-text').innerText = `Dijawab: ${answeredCount} / ${questionsData.length} Soal`;
+        }
+
+        function calculateResult() {
+            const answeredCount = Object.keys(userAnswers).length;
+            if (answeredCount < questionsData.length) {
+                const remaining = questionsData.length - answeredCount;
+                if (!confirm(`Masih ada ${remaining} soal yang belum dijawab. Yakin ingin mengumpulkan sekarang?`)) {
+                    return;
+                }
+            }
+
+            let scoreCount = 0;
+            const feedbackContainer = document.getElementById('feedback-list');
+            feedbackContainer.innerHTML = '';
+
+            questionsData.forEach((q, index) => {
+                const userChoice = userAnswers[index];
+                const isCorrect = userChoice === q.correct;
+                if (isCorrect) scoreCount++;
+
+                const feedbackItem = document.createElement('div');
+                feedbackItem.className = `feedback-item ${isCorrect ? 'correct' : 'incorrect'}`;
+
+                const userChoiceText = userChoice !== undefined 
+                    ? `${q.options[userChoice].text} ${q.options[userChoice].arabic || ''}` 
+                    : 'Tidak dijawab';
+
+                const correctChoiceText = `${q.options[q.correct].text} ${q.options[q.correct].arabic || ''}`;
+
+                feedbackItem.innerHTML = `
+                    <div class="feedback-q">${index + 1}. ${q.question}</div>
+                    <div class="feedback-ans">
+                        <strong>Jawaban kamu:</strong> ${userChoiceText} ${isCorrect ? '✅' : '❌'}<br>
+                        ${!isCorrect ? `<strong>Jawaban benar:</strong> ${correctChoiceText}<br>` : ''}
+                        <span style="color:#718096; font-size:0.85rem;">💡 <em>${q.explanation}</em></span>
+                    </div>
+                `;
+
+                feedbackContainer.appendChild(feedbackItem);
+            });
+
+            // Calculate score out of 100
+            const finalScore = Math.round((scoreCount / questionsData.length) * 100);
+            document.getElementById('final-score').innerText = finalScore;
+
+            // Set result title & text based on score
+            const resultTitle = document.getElementById('result-title');
+            const resultDesc = document.getElementById('result-desc');
+
+            if (finalScore === 100) {
+                resultTitle.innerText = "Mumtaz! (Sempurna) 🎉";
+                resultDesc.innerText = "Luar biasa! Kamu menguasai seluruh materi kosakata profesi dengan sangat baik.";
+            } else if (finalScore >= 70) {
+                resultTitle.innerText = "Bagus Sekali! 👍";
+                resultDesc.innerText = "Pemahamanmu sudah sangat baik. Pelajari lagi sedikit materi yang belum tepat.";
+            } else {
+                resultTitle.innerText = "Tetap Semangat! 💪";
+                resultDesc.innerText = "Yuk baca kembali materi di halaman awal dan coba latihannya lagi!";
+            }
+
+            // Hide questions & submit button, show result container
+            document.getElementById('quiz-questions-container').style.display = 'none';
+            document.getElementById('submit-container').style.display = 'none';
+            document.getElementById('result-container').style.display = 'block';
+
+            window.scrollTo({ top: document.getElementById('page-latihan').offsetTop, behavior: 'smooth' });
+        }
+
+        function resetQuiz() {
+            userAnswers = {};
+            document.getElementById('quiz-questions-container').style.display = 'block';
+            document.getElementById('submit-container').style.display = 'block';
+            document.getElementById('result-container').style.display = 'none';
+            renderQuestions();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Initialize quiz on page load
+        window.onload = function() {
+            renderQuestions();
+        };
+    </script>
+</body>
+</html>
+```
